@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { API_URL } from './config'; // adjust path if config.js is in another folder
+import { API_URL } from '../config.jsx'; // adjust path if config.js is in another folder
 
 function App() {
     const [message, setMessage] = useState(''); // will hold the message from the backend
