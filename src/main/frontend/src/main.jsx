@@ -13,7 +13,7 @@ import AddGame from './components/AddGame.jsx';
 
 import { Amplify } from 'aws-amplify';
 import config from './amplifyconfiguration.json';
-import ErrorHandlingPage from './components/ErrorHandlingPage.jsx';
+
 
 // configure Amplify
 Amplify.configure(config);
