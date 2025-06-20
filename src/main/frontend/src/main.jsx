@@ -28,7 +28,6 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/page2" element={<Page2 />} />       {/* Extra Page */}
                 <Route path="/games" element={<GameList />} />    {/* View Games */}
                 <Route path="/add-game" element={<AddGame />} />  {/* Add Game */}
-                <Route path="/error-test" element={<ErrorHandlingPage />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>

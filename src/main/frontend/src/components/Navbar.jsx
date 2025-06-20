@@ -16,8 +16,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
                 <Link to="/games">Game List</Link>
                 <Link to="/add-game">Add Game</Link>
-                <Link to="/page2">Page 2</Link>
-                <Link to="/error-test">Error Test</Link>
+                <Link to="/page2">Profile</Link>
             </div>
         </nav>
     );
