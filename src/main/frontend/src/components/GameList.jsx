@@ -7,7 +7,7 @@ function GameList() {
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                const response = await fetch(`${API_URL}/user`, {
+                const response = await fetch(`${API_URL}/games`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ function GameList() {
             <ul>
                 {games.map((game) => (
                     <li key={game.id}>
-                        {game.name} (ID: {game.id})
+                         <strong>{game.title}</strong> — ⭐ {game.rating} stars
                     </li>
                 ))}
             </ul>
@@ -38,3 +38,4 @@ function GameList() {
 }
 
 export default GameList;
+

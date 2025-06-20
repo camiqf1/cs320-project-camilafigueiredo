@@ -21,7 +21,7 @@ function App() {
 
     return (
         <div>
-            <h1>🎮 GameRate</h1>
+            <h1> GameBoxx</h1>
             <p>{message}</p>
 
             <h2>Welcome to GameRate!</h2>

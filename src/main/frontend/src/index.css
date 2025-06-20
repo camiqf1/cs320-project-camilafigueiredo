@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: #4b0082;
+  background-color: #ffe4f2;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +15,100 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure ALL elements inherit the pixel font */
+* {
+  font-family: 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 600;
+  color: #ff69b4;
+  text-decoration: none;
 }
 a:hover {
-  color: #535bf2;
+  color: #ff1493;
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(180deg, #ffe4f2 0%, #ffc0cb 100%);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 1.6em;
+  line-height: 1.2;
+  color: #c71585;
+  text-shadow: 1px 1px 4px white;
+}
+
+nav {
+  background-color: #ffb6c1;
+  width: 100%;
+  padding: 1em 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin: 0 15px;
+  font-size: 1em;
+  color: #8b008b;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  border-radius: 10px;
+  border: 2px solid #ff69b4;
+  padding: 0.6em 1.4em;
+  font-size: 0.9em;
+  font-weight: bold;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #fff0f5;
+  color: #c71585;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #ff69b4;
+  color: white;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px dashed #ff1493;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #2b0032;
   }
-  a:hover {
-    color: #747bff;
+  nav {
+    background-color: #4b0050;
+  }
+  a {
+    color: #ffc0cb;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #5b004f;
+    border-color: #ff69b4;
   }
+  button:hover {
+    background-color: #ff69b4;
+  }
+  .pixel-title {
+    font-family: 'Press Start 2P', cursive, sans-serif !important;
+    font-size: 1.5em;
+    color: #d63384;
+    text-shadow: 2px 2px 0 #fff;
+    letter-spacing: 1px;
+  }
+
 }
+
+
+
