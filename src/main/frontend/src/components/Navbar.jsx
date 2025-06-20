@@ -1,3 +1,5 @@
+// it defines the top naviagtion bar and it has the links to all pages of the site.
+
 import { Link } from "react-router-dom";
 import './Navbar.css'; // you'll style it here
 import controllerIcon from '../assets/controller1.png';

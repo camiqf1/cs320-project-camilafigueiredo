@@ -1,3 +1,8 @@
+// This file handles backend validation of usernames submitted from the frontend.
+// It checks for null, empty, duplicate, or invalid entries before storing in the database.
+
+
+
 package User;
 
 import jakarta.transaction.Transactional;

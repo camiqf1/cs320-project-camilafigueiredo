@@ -1,3 +1,7 @@
+// This is the RESTful resource class that handles Create, Read, Update, and Delete (CRUD)
+// operations for games. It communicates with the frontend to manage game entries in the database.
+
+
 package User;
 
 import jakarta.transaction.Transactional;

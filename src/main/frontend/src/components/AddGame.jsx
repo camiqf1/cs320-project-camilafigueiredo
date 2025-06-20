@@ -1,3 +1,5 @@
+// it allows users to add new games, rating, and it stores in the database
+
 import { useState } from 'react';
 import './AddGame.css';
 

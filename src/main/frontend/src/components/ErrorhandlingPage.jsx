@@ -1,3 +1,4 @@
+// Created to handle user input validation in both frontend and backend for usernames.
 import { useState } from "react";
 import { API_URL } from "../config.jsx";
 

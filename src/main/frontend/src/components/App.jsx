@@ -1,3 +1,6 @@
+// default home page
+// it displays a greeting message fetched from the backend and demonstrate POST requests.
+
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../config.jsx'; // adjust path if config.js is in another folder
 

@@ -1,3 +1,5 @@
+// it is a sign-in page it shows the logged-in user's name.
+
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import './Page2.css';

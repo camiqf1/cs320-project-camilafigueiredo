@@ -1,3 +1,5 @@
+// it fetches and displays the list of games stored and rated in the database via a GET request.
+
 import { useEffect, useState } from 'react';
 import { API_URL } from '../config.jsx';
 

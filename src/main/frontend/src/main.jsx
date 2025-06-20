@@ -1,3 +1,5 @@
+// it is an entry point of the React app. it sets up routing and AWS amplify configuration.
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -12,7 +14,6 @@ import AddGame from './components/AddGame.jsx';
 import { Amplify } from 'aws-amplify';
 import config from './amplifyconfiguration.json';
 import ErrorHandlingPage from './components/ErrorHandlingPage.jsx';
-
 
 // configure Amplify
 Amplify.configure(config);

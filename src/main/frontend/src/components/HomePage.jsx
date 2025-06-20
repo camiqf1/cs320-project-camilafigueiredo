@@ -1,3 +1,5 @@
+// main landing page of the site that introduces the application purpose and design.
+
 import { Link } from "react-router-dom";
 
 function HomePage() {

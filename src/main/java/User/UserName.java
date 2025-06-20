@@ -1,3 +1,7 @@
+// This is the entity class representing usernames stored in the database.
+// It uses Panache for database interaction and maps to a simple table with an ID and name.
+
+
 package User;
 
 import jakarta.persistence.Entity;
