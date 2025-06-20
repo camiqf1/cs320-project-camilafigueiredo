@@ -1,0 +1,37 @@
+.navbar {
+    background-color: #ffe3ec;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ff80ab;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-logo img {
+    width: 40px;
+}
+
+.navbar-logo h1 {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+    color: #d63384;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.navbar-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #6f42c1;
+    font-weight: bold;
+}
+
+.navbar-links a:hover {
+    color: #ff4da6;
+    text-decoration: underline;
+}

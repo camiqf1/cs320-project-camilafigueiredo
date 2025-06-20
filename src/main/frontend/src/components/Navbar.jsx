@@ -1,17 +1,23 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import './Navbar.css'; // you'll style it here
+import controllerIcon from '../assets/controller.png';
 
 const Navbar = () => {
     return (
-        <nav>
-            <div>
+        <nav className="navbar">
+            <div className="navbar-logo">
+                <img src={controllerIcon} alt="GameBoxx logo" />
+                <h1>GameBoxx</h1>
+            </div>
+            <div className="navbar-links">
                 <Link to="/">Home</Link>
-                {/* Using "span" here to add a separator between the links.
-                get rid of this later to add CSS formatting*/}
-                <span> | </span>
-                <Link to="/page2"> Page 2</Link>
+                <Link to="/games">Game List</Link>
+                <Link to="/add-game">Add Game</Link>
+                <Link to="/page2">Page 2</Link>
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;
+
