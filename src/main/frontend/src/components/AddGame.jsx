@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import './AddGame.css';
+import { API_URL } from '../config.jsx';
 
 function AddGame() {
     const [title, setTitle] = useState('');
@@ -17,18 +18,20 @@ function AddGame() {
         }
 
         try {
-            const response = await fetch('http://localhost:8080/games', {
+            const response = await fetch(`${API_URL}/games`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title, rating })
             });
 
+            const text = await response.text(); // get backend message
+
             if (response.ok) {
-                setMessage(`Game "${title}" rated ${rating} stars was added!`);
+                setMessage(text); // show success message from backend
                 setTitle('');
                 setRating('');
             } else {
-                setMessage('Failed to add game.');
+                setMessage(`Error: ${text}`);
             }
         } catch (error) {
             setMessage('Error connecting to the server.');
