@@ -1,16 +1,9 @@
-/*
-  Index.css
-  This file defines the styling rules for the [component] to match the Mario/Princess Peach theme.
-*/
-
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
   font-family: 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light;
   color: #4b0082;
   background-color: #ffe4f2;
@@ -21,19 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure ALL elements inherit the pixel font */
 * {
   font-family: 'Press Start 2P', system-ui, Avenir, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
-}
-
-a {
-  font-weight: 600;
-  color: #ff69b4;
-  text-decoration: none;
-}
-a:hover {
-  color: #ff1493;
 }
 
 body {
@@ -44,13 +27,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(180deg, #ffe4f2 0%, #ffc0cb 100%);
+  color: #8b008b;
 }
 
-h1 {
-  font-size: 1.6em;
-  line-height: 1.2;
-  color: #c71585;
-  text-shadow: 1px 1px 4px white;
+a {
+  font-weight: 600;
+  color: #ff69b4;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff1493;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, label, span {
+  color: #8b008b !important;
 }
 
 nav {
@@ -73,16 +64,17 @@ button {
   padding: 0.6em 1.4em;
   font-size: 0.9em;
   font-weight: bold;
-  font-family: inherit;
   background-color: #fff0f5;
   color: #c71585;
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 button:hover {
   background-color: #ff69b4;
   color: white;
 }
+
 button:focus,
 button:focus-visible {
   outline: 3px dashed #ff1493;
@@ -93,28 +85,26 @@ button:focus-visible {
     color: #ffffff;
     background-color: #2b0032;
   }
+
   nav {
     background-color: #4b0050;
   }
+
   a {
     color: #ffc0cb;
   }
+
   button {
     background-color: #5b004f;
     border-color: #ff69b4;
   }
+
   button:hover {
     background-color: #ff69b4;
   }
-  .pixel-title {
-    font-family: 'Press Start 2P', cursive, sans-serif !important;
-    font-size: 1.5em;
-    color: #d63384;
-    text-shadow: 2px 2px 0 #fff;
-    letter-spacing: 1px;
-  }
-
 }
+
+
 
 
 

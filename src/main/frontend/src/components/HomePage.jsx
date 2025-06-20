@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function HomePage() {
     return (
         <div className="p-6 space-y-10 text-center">
-            <h1 className="text-4xl font-bold">🎮 GameBoxd</h1>
+            <h1 className="text-4xl font-bold">🎮 GameBoxx</h1>
             <p className="text-lg text-gray-600">
                 Discover, rate, and share your favorite video games.
             </p>

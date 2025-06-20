@@ -27,7 +27,7 @@ function App() {
             <h1> GameBoxx</h1>
             <p>{message}</p>
 
-            <h2>Welcome to GameRate!</h2>
+            <h2>Welcome to GameBoxx!</h2>
             <p>Discover, rate, and keep track of your favorite games — just like Letterboxd, but for games!</p>
 
             <h3>Features:</h3>
