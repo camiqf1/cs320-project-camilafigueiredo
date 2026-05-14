@@ -1,5 +1,16 @@
-*
-!target/*-runner
-!target/*-runner.jar
-!target/lib/*
-!target/quarkus-app/*
+# Ignore IDE and OS files
+.idea
+.vscode
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Ignore build output (will be regenerated)
+target/
+
+# Ignore git
+.git
+
+# Ignore amplify
+amplify/
