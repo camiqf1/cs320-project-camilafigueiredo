@@ -1,17 +1,8 @@
-﻿FROM maven:3.9.9-eclipse-temurin-17 AS build
+﻿FROM maven:3.9.9-eclipse-temurin-17
 WORKDIR /app
 RUN apt-get update && apt-get install -y nodejs npm
 COPY . .
-RUN mvn package -DskipTests && find target -maxdepth 3 -type f -name "*.jar" | head -20
-
-FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
-ENV LANGUAGE='en_US:en'
-COPY --chown=185 --from=build /app/target/quarkus-app/lib/ /deployments/lib/
-COPY --chown=185 --from=build /app/target/quarkus-app/*.jar /deployments/
-COPY --chown=185 --from=build /app/target/quarkus-app/app/ /deployments/app/
-COPY --chown=185 --from=build /app/target/quarkus-app/quarkus/ /deployments/quarkus/
+RUN mvn package -DskipTests
+RUN find target -maxdepth 4 -name "*.jar" -o -name "*.zip" | head -30
 EXPOSE 8080
-USER 185
-ENV JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
-ENV JAVA_APP_JAR="/deployments/quarkus-run.jar"
-ENTRYPOINT [ "/opt/jboss/container/java/run/run-java.sh" ]
+CMD ["echo", "build complete"]
