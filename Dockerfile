@@ -1,11 +1,8 @@
 ﻿FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
-
-# Install Node.js for Quinoa frontend build
 RUN apt-get update && apt-get install -y nodejs npm
-
 COPY . .
-RUN mvn package -DskipTests
+RUN mvn package -DskipTests && find target -maxdepth 3 -type f -name "*.jar" | head -20
 
 FROM registry.access.redhat.com/ubi9/openjdk-21:1.21
 ENV LANGUAGE='en_US:en'
