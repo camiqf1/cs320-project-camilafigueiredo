@@ -1,5 +1,9 @@
 ﻿FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
+
+# Install Node.js for Quinoa frontend build
+RUN apt-get update && apt-get install -y nodejs npm
+
 COPY . .
 RUN mvn package -DskipTests
 
