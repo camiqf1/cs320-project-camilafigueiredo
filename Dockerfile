@@ -6,7 +6,11 @@ RUN mvn package -DskipTests
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/lib/ /app/lib/
-COPY --from=build /app/target/cs320-project-camilafigueiredo-1.0.0-SNAPSHOT-runner.jar /app/app.jar
-EXPOSE 8080
-CMD ["java", "-jar", "/app/app.jar"]
+COPY --from=build /app/target/quarkus-app/lib/ /app/lib/
+COPY --from=build /app/target/quarkus-app/*.jar /app/
+COPY --from=build /app/target/quarkus-app/app/ /app/app/
+COPY --from=build /app/target/quarkus-app/quarkus/ /app/quarkus/
+EXPOSE 10000
+ENV QUARKUS_HTTP_PORT=10000
+ENV QUARKUS_HTTP_HOST=0.0.0.0
+CMD ["java", "-jar", "/app/quarkus-run.jar"]
