@@ -1,8 +1,6 @@
-// it fetches and displays the list of games stored and rated in the database via a GET request.
-
-
 import { useEffect, useState } from 'react';
 import { API_URL } from '../config.jsx';
+import './GameList.css';
 
 function GameList() {
     const [games, setGames] = useState([]);
@@ -25,12 +23,8 @@ function GameList() {
     }, []);
 
     const handleDelete = async (id) => {
-        try {
-            await fetch(`${API_URL}/games/${id}`, { method: 'DELETE' });
-            fetchGames(); // refresh list
-        } catch (error) {
-            console.error('Error deleting game:', error);
-        }
+        await fetch(`${API_URL}/games/${id}`, { method: 'DELETE' });
+        fetchGames();
     };
 
     const startEditing = (game) => {
@@ -40,61 +34,55 @@ function GameList() {
     };
 
     const handleUpdate = async () => {
-        try {
-            const response = await fetch(`${API_URL}/games/${editId}`, {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ title: editTitle, rating: editRating }),
-            });
+        const response = await fetch(`${API_URL}/games/${editId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: editTitle, rating: editRating }),
+        });
 
-            if (response.ok) {
-                setEditId(null);
-                fetchGames();
-            } else {
-                alert('Update failed.');
-            }
-        } catch (error) {
-            console.error('Error updating game:', error);
+        if (response.ok) {
+            setEditId(null);
+            fetchGames();
         }
     };
 
     return (
-        <div>
-            <h2>Game List</h2>
-            <ul>
-                {games.map((game) => (
-                    <li key={game.id}>
-                        {editId === game.id ? (
-                            <>
-                                <input
-                                    type="text"
-                                    value={editTitle}
-                                    onChange={(e) => setEditTitle(e.target.value)}
-                                />
-                                <input
-                                    type="number"
-                                    value={editRating}
-                                    onChange={(e) => setEditRating(e.target.value)}
-                                    min="1"
-                                    max="5"
-                                />
-                                <button onClick={handleUpdate}>Save</button>
-                                <button onClick={() => setEditId(null)}>Cancel</button>
-                            </>
-                        ) : (
-                            <>
-                                <strong>{game.title}</strong> — ⭐ {game.rating} stars
-                                <button onClick={() => startEditing(game)}>Edit</button>
-                                <button onClick={() => handleDelete(game.id)}>Delete</button>
-                            </>
-                        )}
-                    </li>
-                ))}
-            </ul>
+        <div className="game-list-page">
+            <div className="game-list-wrapper">
+                <h1 className="game-list-title">Game List</h1>
+
+                <div className="game-list-panel">
+                    {games.length === 0 ? (
+                        <p className="empty-message">No games added yet.</p>
+                    ) : (
+                        games.map((game) => (
+                            <div className="game-row" key={game.id}>
+                                {editId === game.id ? (
+                                    <>
+                                        <input value={editTitle} onChange={(e) => setEditTitle(e.target.value)} />
+                                        <input type="number" value={editRating} onChange={(e) => setEditRating(e.target.value)} min="1" max="5" />
+                                        <button onClick={handleUpdate}>Save</button>
+                                        <button onClick={() => setEditId(null)}>Cancel</button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div>
+                                            <h3>{game.title}</h3>
+                                            <p>{game.rating} / 5 stars</p>
+                                        </div>
+                                        <div className="game-actions">
+                                            <button onClick={() => startEditing(game)}>Edit</button>
+                                            <button onClick={() => handleDelete(game.id)}>Delete</button>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
 
 export default GameList;
-
-

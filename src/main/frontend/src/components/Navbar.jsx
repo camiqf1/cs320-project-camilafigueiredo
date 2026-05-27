@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import './Navbar.css';
-import controllerIcon from '../assets/controller1.png';
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <img src={controllerIcon} alt="GameBoxx logo" />
                 <h1>GAMEBOXX</h1>
             </div>
 

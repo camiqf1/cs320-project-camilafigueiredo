@@ -8,31 +8,31 @@ function Page2({ signOut, user }) {
 
             <div className="page2-content">
 
-                <div>
+                <div className="page2-panel">
+
+                    <p className="page2-label">
+                        USER PROFILE
+                    </p>
+
                     <h1 className="page2-title">
-                        Welcome back,
+                        Welcome back
                     </h1>
 
-                    <p style={{
-                        color: '#f2f2f2',
-                        fontSize: '1.5rem',
-                        marginTop: '10px'
-                    }}>
+                    <p className="page2-username">
                         {user.username}
                     </p>
 
                     <button
                         onClick={signOut}
-                        style={{
-                            marginTop: '30px'
-                        }}
-                        className="addgame-button"
+                        className="page2-button"
                     >
                         Sign Out
                     </button>
+
                 </div>
 
             </div>
+
         </div>
     );
 }
