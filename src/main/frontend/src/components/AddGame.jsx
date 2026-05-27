@@ -1,5 +1,3 @@
-// it allows users to add new games, rating, and it stores in the database
-
 import { useState } from 'react';
 import './AddGame.css';
 import { API_URL } from '../config.jsx';
@@ -24,10 +22,10 @@ function AddGame() {
                 body: JSON.stringify({ title, rating })
             });
 
-            const text = await response.text(); // get backend message
+            const text = await response.text();
 
             if (response.ok) {
-                setMessage(text); // show success message from backend
+                setMessage(text);
                 setTitle('');
                 setRating('');
             } else {
@@ -39,26 +37,60 @@ function AddGame() {
     };
 
     return (
-        <div className="add-game">
-            <h1>Add a Game Rating</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Game Title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-                <input
-                    type="number"
-                    placeholder="Rating (1–5)"
-                    value={rating}
-                    onChange={(e) => setRating(e.target.value)}
-                    min="1"
-                    max="5"
-                />
-                <button type="submit">Add Game</button>
-            </form>
-            {message && <p>{message}</p>}
+        <div className="addgame-container">
+
+            <div className="addgame-content">
+
+                <h1 className="addgame-title">
+                    Add a Game Rating
+                </h1>
+
+                <form
+                    onSubmit={handleSubmit}
+                    style={{
+                        display: 'flex',
+                        gap: '20px',
+                        alignItems: 'center'
+                    }}
+                >
+                    <input
+                        className="addgame-input"
+                        type="text"
+                        placeholder="Game Title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+
+                    <input
+                        className="addgame-input"
+                        type="number"
+                        placeholder="Rating (1-5)"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                        min="1"
+                        max="5"
+                    />
+
+                    <button
+                        className="addgame-button"
+                        type="submit"
+                    >
+                        Add Game
+                    </button>
+                </form>
+
+            </div>
+
+            {message && (
+                <p style={{
+                    textAlign: 'center',
+                    marginTop: '40px',
+                    color: '#ff4fa3'
+                }}>
+                    {message}
+                </p>
+            )}
+
         </div>
     );
 }

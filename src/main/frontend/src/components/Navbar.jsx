@@ -1,7 +1,5 @@
-// it defines the top naviagtion bar and it has the links to all pages of the site.
-
 import { Link } from "react-router-dom";
-import './Navbar.css'; // you'll style it here
+import './Navbar.css';
 import controllerIcon from '../assets/controller1.png';
 
 const Navbar = () => {
@@ -9,18 +7,22 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-logo">
                 <img src={controllerIcon} alt="GameBoxx logo" />
-                <h1 className="pixel-title">GameBoxx</h1>
-
+                <h1>GAMEBOXX</h1>
             </div>
+
             <div className="navbar-links">
-                <Link to="/">Home</Link>
-                <Link to="/games">Game List</Link>
-                <Link to="/add-game">Add Game</Link>
-                <Link to="/page2">Profile</Link>
+                <Link to="/">HOME</Link>
+                <Link to="/games">GAME LIST</Link>
+                <Link to="/add-game">ADD GAME</Link>
+                <Link to="/page2">PROFILE</Link>
+            </div>
+
+            <div className="navbar-status">
+                <span className="status-dot"></span>
+                ONLINE
             </div>
         </nav>
     );
 };
 
 export default Navbar;
-

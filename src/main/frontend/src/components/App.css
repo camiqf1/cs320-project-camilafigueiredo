@@ -1,50 +1,184 @@
-/*
-  App.css
-  This file defines the styling rules for the [component] to match the Mario/Princess Peach theme.
-*/
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
   margin: 0;
-  padding: 0;
+  background: #05070a;
+  color: #e8f1f2;
+  font-family: 'Inter', sans-serif;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 1rem;
+.cyber-page {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    linear-gradient(rgba(255,47,146,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,47,146,0.03) 1px, transparent 1px),
+    radial-gradient(circle at top right, rgba(255,47,146,0.08), transparent 30%),
+    #05070a;
+  background-size: 40px 40px;
 }
 
-.container {
-  padding: 2rem;
-  text-align: center;
+.hero-panel {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 24px;
 }
 
-.home-intro {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
+.hero-left,
+.news-panel,
+.feature-card,
+.cyber-footer {
+  background: rgba(10, 14, 20, 0.72);
+  border: 1px solid rgba(255,47,146,0.14);
+  backdrop-filter: blur(12px);
 }
 
-button, a {
-  background-color: #007bff;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 5px;
+.hero-left {
+  padding: 56px;
+  min-height: 540px;
+}
+
+.eyebrow {
+  color: #ff2f92;
+  letter-spacing: 4px;
+  font-size: 13px;
+  margin-bottom: 28px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero-left h1 {
+  font-size: clamp(54px, 7vw, 92px);
+  line-height: 0.92;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.hero-left h1 span {
+  color: #ff2f92;
+  text-shadow: 0 0 18px rgba(255,47,146,0.35);
+}
+
+.hero-text {
+  margin-top: 42px;
+  max-width: 620px;
+  color: #aab7c2;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.primary-action,
+.secondary-action {
+  padding: 16px 34px;
+  border: 1px solid rgba(255,47,146,0.4);
   text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin: 0.5rem;
+  color: #ff2f92;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  transition: 0.25s ease;
 }
 
-button:hover, a:hover {
-  background-color: #0056b3;
+.primary-action:hover,
+.secondary-action:hover {
+  background: rgba(255,47,146,0.08);
+  box-shadow: 0 0 18px rgba(255,47,146,0.16);
 }
 
-img.feature-image {
-  width: 250px;
-  margin-top: 1rem;
-  border-radius: 8px;
+.news-panel {
+  padding: 34px;
+}
+
+.news-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item span {
+  color: #ff2f92;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+}
+
+.news-item h3 {
+  margin: 10px 0;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.news-item p {
+  color: #96a5af;
+  line-height: 1.7;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.feature-card {
+  padding: 32px;
+  transition: 0.25s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(0,255,255,0.5);
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  font-size: 34px;
+  color: #ff2f92;
+  margin-bottom: 18px;
+}
+
+.feature-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.feature-card p {
+  color: #96a5af;
+  line-height: 1.7;
+}
+
+.cyber-footer {
+  margin-top: 24px;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  color: #ff2f92;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .hero-panel,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left {
+    padding: 34px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
 }

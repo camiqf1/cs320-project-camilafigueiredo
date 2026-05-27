@@ -1,19 +1,49 @@
-/*
-  Page2.css
-  This file defines the styling rules for the [component] to match the Mario/Princess Peach theme.
-*/
-
-
-h1 {
-    color: #2c3e50;
-    margin-top: 2rem;
+.page2-container {
+  min-height: 100vh;
+  padding: 80px 120px;
+  color: #f2f2f2;
+  background:
+    linear-gradient(rgba(255,79,163,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,79,163,0.03) 1px, transparent 1px),
+    #05070a;
+  background-size: 40px 40px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.page2-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 120px;
+  margin-top: 80px;
+}
+
+.page2-title {
+  font-size: 3rem;
+  color: #f2f2f2;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.page2-table {
+  width: 700px;
+  border-collapse: collapse;
+  background: rgba(10, 14, 20, 0.72);
+  border: 1px solid rgba(255,79,163,0.25);
+}
+
+.page2-table th {
+  color: #ff4fa3;
+  font-weight: 500;
+  padding: 18px;
+  text-align: left;
+}
+
+.page2-table td {
+  padding: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #f2f2f2;
+}
+
+.page2-table a {
+  color: #ff4fa3;
 }

@@ -1,43 +1,77 @@
-/*
-  Navbar.css
-  This file defines the styling rules for the [component] to match the Mario/Princess Peach theme.
-*/
-
-
 .navbar {
-    background-color: #ffe3ec;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #ff80ab;
+    padding: 22px 42px;
+    background: rgba(5, 6, 7, 0.92);
+    border-bottom: 1px solid rgba(0, 245, 255, 0.28);
+    backdrop-filter: blur(8px);
 }
 
 .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 14px;
 }
 
 .navbar-logo img {
-    width: 40px;
+    width: 30px;
+    opacity: 0.85;
 }
 
 .navbar-logo h1 {
-    font-family: 'Press Start 2P', cursive;
-    color: #d63384;
-    font-size: 1.8rem;
     margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #ff2f92;
+    font-family: Inter, sans-serif;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 52px;
 }
 
 .navbar-links a {
-    margin-left: 1rem;
+    color: #c9c9c9;
     text-decoration: none;
-    color: #6f42c1;
-    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    transition: 0.2s ease;
 }
 
 .navbar-links a:hover {
-    color: #ff4da6;
-    text-decoration: underline;
+    color: #ff2f92;
+}
+
+.navbar-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff2f92;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff2f92;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ff2f92;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navbar-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
